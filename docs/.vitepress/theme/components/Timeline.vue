@@ -41,26 +41,13 @@ export default defineComponent({
 </script>
 
 <style lang='stylus' scoped>
-.header {
-  color: #353535;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 1rem 0;
-  text-align: center;
-}
-.year {
+.year
   padding: 15px 0;
-  font-size: 1.3rem;
+  font-size: 40px;
   font-weight: 600;
   color: var(--text-color);
-}
-
-
 
 @media screen and (max-width: 700px) {
-  .header {
-    font-size: 1.5rem;
-  }
   .md-line {
     padding: 2px;
   }
@@ -91,6 +78,8 @@ export default defineComponent({
 
 .md-line:hover
     text-decoration none
+    transition .2s ease-out
+    transform translateX(4px)
     .title
         color black
     .date 

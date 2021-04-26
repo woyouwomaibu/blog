@@ -18,9 +18,12 @@ export function useYearSort(pages) {
   }
 
   export function initTags(pages) {
-    const data = {};
+    const data = {
+        all: []
+    };
     for (let index = 0; index < pages.length; index++) {
       const element = pages[index];
+      data.all.push(element)
       const tags = element.frontMatter.tags;
       tags && tags.forEach((item) => {
         if (data[item]) {

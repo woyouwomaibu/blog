@@ -37,10 +37,9 @@ export default defineComponent({
         const siteData = useSiteData();
         const route = useRoute();
         const data = computed(() => initTags(siteData.value.themeConfig.pages));
-        let selectTag = ref("");
+        let selectTag = ref("all");
         const toggleTag = (tag) => {
             selectTag.value = tag;
-            console.log(selectTag === tag)
         };
         return {
             data,
@@ -65,9 +64,9 @@ export default defineComponent({
   margin: 0 16px 12px 0;
   font-size: 14px;
   line-height: 25px;
-  background-color: #fafafa;
+  background-color: #ccc;
   transition: 0.4s;
-  color: #4a9ae1;
+  color: #000;
   cursor: pointer;
 }
 @media screen and (max-width: 700px) {
