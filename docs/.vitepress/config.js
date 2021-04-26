@@ -6,16 +6,17 @@ async function getConfig() {
     title: 'Fxxk it',
     description: 'Walking on my own 8miles',
     themeConfig: {
-      search: true,
       // 保存解析 Markdown 的元数据
       pages: await getPages(),
       author: "slim walker",
+      lastUpdated: 'Last Updated',
+      sidebar: false,
       nav: [
-        { text: "首页", link: "/" },
-        { text: "归档", link: "/docs" }
+        { text: "Home", link: "/" },
+        { text: "Timeline", link: "/timeline" },
+        { text: "Tags", link: "/tags" }
       ]
-    },
-    dest: "public",
+    }
   };
 
   return config;

@@ -16,3 +16,20 @@ export function useYearSort(pages) {
     }
     return data;
   }
+
+  export function initTags(pages) {
+    const data = {};
+    for (let index = 0; index < pages.length; index++) {
+      const element = pages[index];
+      const tags = element.frontMatter.tags;
+      tags && tags.forEach((item) => {
+        if (data[item]) {
+          data[item].push(element);
+        } else {
+          data[item] = [];
+          data[item].push(element);
+        }
+      });
+    }
+    return data;
+  }

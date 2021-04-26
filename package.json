@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "stylus": "^0.54.8",
     "vitepress": "^0.13.0"
   },
   "scripts": {
