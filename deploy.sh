@@ -2,13 +2,13 @@ set -e
 
 yarn build
 
-cd docs/.vuepress/dist
-echo 'zhw1995.com' > CNAME
+cd docs/.vitepress/dist
+echo fxxkit.com > CNAME
 
 git init
 git add -A
 git commit -m 'deploy'
 
-git push -f github:woyouwomaibu/woyouwomaibu.github.io.git master
+git push -f git@github.com:woyouwomaibu/woyouwomaibu.github.io.git master
 
 cd -
