@@ -42,10 +42,10 @@ export default defineComponent({
 
 <style lang='stylus' scoped>
 .year
-  padding: 15px 0;
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--text-color);
+    padding 15px 0
+    font-size 2.5rem
+    font-weight 600
+    color var(--text-color)
 
 @media screen and (max-width: 700px) {
   .md-line {
