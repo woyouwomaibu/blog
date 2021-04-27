@@ -10,7 +10,6 @@ async function getConfig() {
       pages: await getPages(),
       author: "slim walker",
       lastUpdated: 'Last Updated',
-      sidebar: false,
       algolia: {
         apiKey: 'd3ed98c90605ae96f48fd97a0a9a47a1',
         indexName: 'fxxkit'

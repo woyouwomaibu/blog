@@ -84,5 +84,28 @@ export default defineComponent({
         color black
     .date 
         color black
+.theme
+    .sidebar
+        left auto!important
+        right 0
+        @media (max-width 720px)
+            transform translateX(-100%)
+            left 0!important
+        &::-webkit-scrollbar
+            width 0
 
+.page
+    margin-left auto!important
+    margin-right auto
+    @media (min-width 960px)
+        margin-right 20rem
+    @media (min-width 720px)
+        margin-right 16.4rem
+.no-sidebar
+    .page
+        margin-right auto!important
+.theme > .sidebar > .sidebar-links > .sidebar-link > .sidebar-link-item
+    font-size 12px
+.theme > .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item
+    font-size 12px
 </style>
