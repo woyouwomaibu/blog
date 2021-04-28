@@ -11,7 +11,7 @@
 
             <NextAndPrevLinks />
             
-            <Comments/>
+            <Comments v-if="showComment"/>
 
             <slot name="bottom" />
         </div>
@@ -21,6 +21,10 @@
 <script setup lang="ts">
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
+import { computed } from "vue"
+import { usePageData } from 'vitepress'
+const page = usePageData()
+const showComment = computed(() => {return !page.value.frontmatter.page} )
 </script>
 
 <style lang='stylus' scoped>
