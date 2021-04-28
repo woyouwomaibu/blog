@@ -1,24 +1,22 @@
 <template>
-    <div class="">
-        <div class="years" v-for="(year, index) in data" :key="index">
-            <div class="year">
-                {{ year[0].frontMatter.date.split('-')[0] }}
-            </div>
-            <a
-                v-show="!article.frontMatter.home"
-                :href="article.regularPath || ''"
-                v-for="(article, el) in year"
-                :key="el"
-                class="md-line"
-            >
-                <div class="title">
-                    {{ article.frontMatter.title || '' }}
-                </div>
-                <div class="date">
-                    {{ article.frontMatter.date.slice(5) || '' }}
-                </div>
-            </a>
+    <div class="years" v-for="(year, index) in data" :key="index">
+        <div class="year">
+            {{ year[0].frontMatter.date.split('-')[0] }}
         </div>
+        <a
+            v-show="!article.frontMatter.home"
+            :href="article.regularPath || ''"
+            v-for="(article, el) in year"
+            :key="el"
+            class="md-line"
+        >
+            <div class="title">
+                {{ article.frontMatter.title || '' }}
+            </div>
+            <div class="date">
+                {{ article.frontMatter.date.slice(5) || '' }}
+            </div>
+        </a>
     </div>
 </template>
 

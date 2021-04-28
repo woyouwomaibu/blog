@@ -12,6 +12,8 @@
   "dependencies": {
     "globby": "^11.0.3",
     "gray-matter": "^4.0.3",
-    "mz": "^2.7.0"
+    "mz": "^2.7.0",
+    "typed.js": "^2.0.12",
+    "valine": "^1.4.14"
   }
 }

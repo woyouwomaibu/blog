@@ -10,6 +10,8 @@
             <PageFooter />
 
             <NextAndPrevLinks />
+            
+            <Comments/>
 
             <slot name="bottom" />
         </div>
@@ -24,7 +26,7 @@ import NextAndPrevLinks from './NextAndPrevLinks.vue'
 <style lang='stylus' scoped>
 .page
     padding-top var(--header-height)
-    
+
 @media (min-width 720px)
     .page
         margin-right 16.4rem
@@ -46,3 +48,4 @@ import NextAndPrevLinks from './NextAndPrevLinks.vue'
         /* fix carbon ads display */
         clear both
 </style>
+

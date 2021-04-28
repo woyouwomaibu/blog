@@ -5,7 +5,6 @@ tags:
  - Git
 ---
 
-# git多用户配置
 ## 遇到的情形
 在公司开发时遇到需要多个git账号配置，例如是github和gitlab之类的，不同的用户连接不同的仓库
 |         | github    | gitlab  |
