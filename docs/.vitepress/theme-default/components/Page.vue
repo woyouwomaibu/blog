@@ -12,6 +12,10 @@
             <NextAndPrevLinks />
             
             <Comments v-if="showComment"/>
+            <span :id="pathname" class="leancloud_visitors" data-flag-title="Your Article Title">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">1000000</i>
+            </span>
 
             <slot name="bottom" />
         </div>
@@ -22,7 +26,9 @@
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
 import { computed } from "vue"
-import { usePageData } from 'vitepress'
+import { usePageData, useRoute } from 'vitepress'
+const route = useRoute()
+const pathname =  computed(() => {return route.path})
 const page = usePageData()
 const showComment = computed(() => {return !page.value.frontmatter.page} )
 </script>
