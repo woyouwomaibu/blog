@@ -1,11 +1,8 @@
 <template>
     <div class="">
-        <div
-            class="years"
-            v-for="(year, index) in data"
-        >
+        <div class="years" v-for="(year, index) in data" :key="index">
             <div class="year">
-                {{ year[0].frontMatter.date.split("-")[0] }}
+                {{ year[0].frontMatter.date.split('-')[0] }}
             </div>
             <a
                 v-show="!article.frontMatter.home"
@@ -15,27 +12,29 @@
                 class="md-line"
             >
                 <div class="title">
-                    {{ article.frontMatter.title || "" }}
+                    {{ article.frontMatter.title || '' }}
                 </div>
-                <div class="date">{{ article.frontMatter.date.slice(5) || "" }}</div>
+                <div class="date">
+                    {{ article.frontMatter.date.slice(5) || '' }}
+                </div>
             </a>
         </div>
     </div>
 </template>
 
 <script>
-import { defineComponent, computed } from "vue";
-import { useYearSort } from "./utils";
-import { usePageData, useSiteData } from "vitepress";
+import { defineComponent, computed } from "vue"
+import { useYearSort } from "./utils"
+import { useSiteData } from "vitepress"
 export default defineComponent({
     setup () {
-        const siteData = useSiteData();
+        const siteData = useSiteData()
         const data = computed(() =>
             useYearSort(siteData.value.themeConfig.pages)
-        );
+        )
         return {
-            data,
-        };
+            data
+        }
     },
 });
 </script>
@@ -46,66 +45,44 @@ export default defineComponent({
     font-size 2.5rem
     font-weight 600
     color var(--text-color)
-
-@media screen and (max-width: 700px) {
-  .md-line {
-    padding: 2px;
-  }
-  .date,
-  .title {
-    font-size: 0.9rem;
-  }
-  .title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 18em;
-  }
-}
 </style>
 <style lang='stylus'>
-.md-line 
+.md-line
     padding 5px 25px
     display flex
     justify-content space-between
     align-items center
+
     .title
         color gray
         font-size 1.1rem
-    .date 
+
+    .date
         color #ccc
         font-size 1rem
 
 .md-line:hover
     text-decoration none
-    transition .2s ease-out
+    transition 0.2s ease-out
     transform translateX(4px)
+
     .title
         color black
-    .date 
-        color black
-.theme
-    .sidebar
-        left auto!important
-        right 0
-        @media (max-width 720px)
-            transform translateX(-100%)
-            left 0!important
-        &::-webkit-scrollbar
-            width 0
 
-.page
-    margin-left auto!important
-    margin-right auto
-    @media (min-width 960px)
-        margin-right 20rem
-    @media (min-width 720px)
-        margin-right 16.4rem
-.no-sidebar
-    .page
-        margin-right auto!important
-.theme > .sidebar > .sidebar-links > .sidebar-link > .sidebar-link-item
-    font-size 12px
-.theme > .sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item
-    font-size 12px
+    .date
+        color black
+
+@media screen and (max-width 720px)
+    .md-line
+        padding 2px
+
+        .date, .title
+            font-size 0.9rem
+
+    .title
+        overflow hidden
+        text-overflow ellipsis
+        white-space nowrap
+        width 18em
+
 </style>
