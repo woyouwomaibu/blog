@@ -28,42 +28,22 @@ const pathname = computed(() => { return route.path })
 const page = usePageData()
 const pageTitle = computed(() => page.value.frontmatter.title)
 const showComment = computed(() => { return !page.value.frontmatter.page })
-function setConfig () {
-    window['disqus_config'] = function () {
-        const defaultConfig = {
-            url: 'https://fxxkit.com',
-            identifier: pathname
-        }
-        this.page = {}
-        Object.assign(this.page, defaultConfig)
-    }
-}
+
 function initDiqus () {
     (function () {
-        var d = document, s = d.createElement('script');
-        s.async = true
-        s.src = 'https://fxxkit.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', + new Date());
-        (d.head || d.body).appendChild(s);
+        var d = document, s = d.createElement('script')
+        s.src = 'https://fxxkit.disqus.com/embed.js'
+        s.setAttribute('data-timestamp', + new Date())
+        (d.head || d.body).appendChild(s)
     })()
 }
 
-
 onMounted(() => {
-    console.log(pathname)
-    setConfig()
     initDiqus()
     watch(pathname, () => {
-        console.log(DISQUS, pathname)
-        // setConfig()
         DISQUS.reset({
-            reload: true,
-            config: function () {
-                console.log(this)
-                this.page.identifier = pathname
-                this.page.url = 'https://fxxkit.com'
-            }
-        });
+            reload: true
+        })
     })
 })
 </script>

@@ -8,6 +8,7 @@ import Typed from 'typed.js'
 import { defineComponent, onMounted } from "vue"
 export default defineComponent({
     setup () {
+        document.title = 'Fxxk it'
         const options = {
             strings: [
                 'Vergangenheit,Gegenwart und Zukunftnur die Bedeutung einer wenn auch hartnäckigen Illusion.\n过去、^500现在和未来的区别^1000只是一种固执的幻觉。 ——阿尔伯特·爱因斯坦',

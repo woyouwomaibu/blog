@@ -37,7 +37,7 @@ export default defineComponent({
         const siteData = useSiteData()
         const route = useRoute()
         const data = computed(() => initTags(siteData.value.themeConfig.pages))
-        let selectTag = ref("All")
+        const selectTag = ref("All")
         const toggleTag = (tag) => {
             selectTag.value = tag
         }
