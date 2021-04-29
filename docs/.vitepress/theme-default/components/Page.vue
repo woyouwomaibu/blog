@@ -10,12 +10,7 @@
             <PageFooter />
 
             <NextAndPrevLinks />
-            
-            <Comments v-if="showComment"/>
-            <span :id="pathname" class="leancloud_visitors" :data-flag-title="pageTitle" v-if="showComment">
-                <em class="post-meta-item-text">阅读量 </em>
-                <i class="leancloud-visitors-count"></i>
-            </span>
+            <div id="disqus_thread"></div>
 
             <slot name="bottom" />
         </div>
@@ -25,14 +20,52 @@
 <script setup lang="ts">
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
-import { computed, ref } from "vue"
+import { computed, ref, onMounted, watch } from "vue"
 import { usePageData, useRoute } from 'vitepress'
 
 const route = useRoute()
-const pathname =  computed(() => {return route.path})
+const pathname = computed(() => { return route.path })
 const page = usePageData()
 const pageTitle = computed(() => page.value.frontmatter.title)
-const showComment = computed(() => {return !page.value.frontmatter.page} )
+const showComment = computed(() => { return !page.value.frontmatter.page })
+function setConfig () {
+    window['disqus_config'] = function () {
+        const defaultConfig = {
+            url: 'https://fxxkit.com',
+            identifier: pathname
+        }
+        this.page = {}
+        Object.assign(this.page, defaultConfig)
+    }
+}
+function initDiqus () {
+    (function () {
+        var d = document, s = d.createElement('script');
+        s.async = true
+        s.src = 'https://fxxkit.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })()
+}
+
+
+onMounted(() => {
+    console.log(pathname)
+    setConfig()
+    initDiqus()
+    watch(pathname, () => {
+        console.log(DISQUS, pathname)
+        // setConfig()
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                console.log(this)
+                this.page.identifier = pathname
+                this.page.url = 'https://fxxkit.com'
+            }
+        });
+    })
+})
 </script>
 
 <style lang='stylus' scoped>
