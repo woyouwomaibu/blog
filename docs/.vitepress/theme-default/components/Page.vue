@@ -10,7 +10,7 @@
             <PageFooter />
 
             <NextAndPrevLinks />
-            <div id="disqus_thread"></div>
+            <Disqus v-show="showComment"/>
 
             <slot name="bottom" />
         </div>
@@ -29,23 +29,6 @@ const page = usePageData()
 const pageTitle = computed(() => page.value.frontmatter.title)
 const showComment = computed(() => { return !page.value.frontmatter.page })
 
-function initDiqus () {
-    (function () {
-        var d = document, s = d.createElement('script')
-        s.src = 'https://fxxkit.disqus.com/embed.js'
-        s.setAttribute('data-timestamp', + new Date())
-        (d.head || d.body).appendChild(s)
-    })()
-}
-
-onMounted(() => {
-    initDiqus()
-    watch(pathname, () => {
-        DISQUS.reset({
-            reload: true
-        })
-    })
-})
 </script>
 
 <style lang='stylus' scoped>
