@@ -1,7 +1,6 @@
 ---
 page: true
 sidebar: false
-title: index
 ---
 
 <Type/>

@@ -2,17 +2,16 @@
     <div id="disqus_thread"></div>
 </template>
 <script setup lang="ts">
-import { computed, ref, onMounted, watch } from "vue"
+import { computed, watch } from "vue"
 import { usePageData, useRoute } from 'vitepress'
 const page = usePageData()
-const pageTitle = computed(() => page.value.frontmatter.title)
+
 const showComment = computed(() => { return !page.value.frontmatter.page })
 
 const route = useRoute()
 const pathname = computed(() => { return route.path })
 
 function callback () {
-    console.log(111111)
     new DisqusJS({
         shortname: 'fxxkit',
         siteName: 'fxxkit',
@@ -35,12 +34,9 @@ function addScript (url) {
     d.async = false;
     document.body.appendChild(d);
     d.onload = () => {
-        callback();
+        callback()
         watch(pathname, () => {
-            console.log(page.value.frontmatter.page, showComment)
             if (!showComment.value) return
-            console.log(22222)
-
             new DisqusJS({
                 shortname: 'fxxkit',
                 siteName: 'fxxkit',
@@ -65,19 +61,16 @@ const supportsIntersectionObserver = runningOnBrowser && "IntersectionObserver" 
 setTimeout(function () {
     if (runningOnBrowser) {
         if (!isBot && supportsIntersectionObserver) {
-            var disqus_observer = new IntersectionObserver(function (entries) {
+            let disqus_observer = new IntersectionObserver(function (entries) {
                 if (entries[0].isIntersecting) {
-                    loadDisqus();
-                    disqus_observer.disconnect();
+                    loadDisqus()
+                    disqus_observer.disconnect()
                 }
-            });
-            disqus_observer.observe(document.getElementById('disqus_thread'));
+            })
+            disqus_observer.observe(document.getElementById('disqus_thread'))
         } else {
-            loadDisqus();
+            loadDisqus()
         }
-        
     }
-    
-
-}, 0);
+}, 0)
 </script>

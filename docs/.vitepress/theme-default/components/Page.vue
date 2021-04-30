@@ -20,11 +20,9 @@
 <script setup lang="ts">
 import PageFooter from './PageFooter.vue'
 import NextAndPrevLinks from './NextAndPrevLinks.vue'
-import { computed, ref, onMounted, watch } from "vue"
+import { computed } from "vue"
 import { usePageData, useRoute } from 'vitepress'
 
-const route = useRoute()
-const pathname = computed(() => { return route.path })
 const page = usePageData()
 const pageTitle = computed(() => page.value.frontmatter.title)
 const showComment = computed(() => { return !page.value.frontmatter.page })
