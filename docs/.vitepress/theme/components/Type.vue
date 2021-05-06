@@ -11,8 +11,8 @@ export default defineComponent({
         document.title = 'Fxxk it'
         const options = {
             strings: [
-                'Vergangenheit,Gegenwart und Zukunftnur die Bedeutung einer wenn auch hartnäckigen Illusion.\n过去、^500现在和未来的区别^1000只是一种固执的幻觉。 ——阿尔伯特·爱因斯坦',
-                'Does time really flow linearly? ^1000 Otherwise, it sometimes folds, sometimes retracts, and sometimes jumps. ^1000The key to the question is not where, not who, but when. May be a fucking closed loop.'
+                '过去、^500现在和未来的区别^1000只是一种固执的幻觉。 ——阿尔伯特·爱因斯坦',
+                '还记得我嘛？^1000CLOT'
             ],
             typeSpeed: 40,
             loop: true,

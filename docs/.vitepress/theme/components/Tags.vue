@@ -19,7 +19,7 @@
         <div class="title">
             {{ article.frontMatter.title || '' }}
         </div>
-        <div class="date">{{ article.frontMatter.date.slice(5) || '' }}</div>
+        <div class="date">{{ article.frontMatter.date || '' }}</div>
     </a>
 </template>
 

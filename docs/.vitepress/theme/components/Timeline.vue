@@ -10,7 +10,7 @@
             :key="el"
             class="md-line"
         >
-            <div class="title">
+            <div class="md-title">
                 {{ article.frontMatter.title || '' }}
             </div>
             <div class="date">
@@ -51,7 +51,7 @@ export default defineComponent({
     justify-content space-between
     align-items center
 
-    .title
+    .md-title
         color gray
         font-size 1.1rem
 
@@ -64,7 +64,7 @@ export default defineComponent({
     transition 0.2s ease-out
     transform translateX(4px)
 
-    .title
+    .md-title
         color black
 
     .date
@@ -74,13 +74,12 @@ export default defineComponent({
     .md-line
         padding 2px
 
-        .date, .title
+        .date, .md-title
             font-size 0.9rem
 
-    .title
+    .md-title
         overflow hidden
         text-overflow ellipsis
         white-space nowrap
-        width 18em
 
 </style>

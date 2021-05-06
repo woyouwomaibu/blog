@@ -1,12 +1,8 @@
 ---
 page: true
 sidebar: false
+home: true
+heroText: Slim Walker
+footer: Powered by Vitepress | Copyright © 2020-present Slim Walker
 ---
-
-<Type/>
-
-## Build By Vitepress
- Why? It uses Vue 3. It uses Vite under the hood.  Lighter page weight.
-
-
 

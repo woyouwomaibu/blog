@@ -3,6 +3,7 @@ title: git多用户配置
 date: 2020-03-13
 tags:
  - Git
+description: 开发时遇到需要多个git账号配置，例如是github和gitlab之类的，不同的用户连接不同的仓库。那么要如何去配置呢？
 ---
 
 ## 遇到的情形

@@ -1,5 +1,5 @@
 
-const getPages = require("./utils/page");
+const getPages = require("./theme/components/page");
 
 async function getConfig() {
   const config = {
@@ -8,7 +8,7 @@ async function getConfig() {
     themeConfig: {
       // 保存解析 Markdown 的元数据
       pages: await getPages(),
-      author: "slim walker",
+      author: "Slim Walker",
       lastUpdated: 'Last Updated',
       nav: [
         { text: "Home", link: "/" },
