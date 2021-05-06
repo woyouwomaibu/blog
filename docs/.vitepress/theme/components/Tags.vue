@@ -16,7 +16,7 @@
         :key="el"
         class="md-line"
     >
-        <div class="title">
+        <div class="md-title">
             {{ article.frontMatter.title || '' }}
         </div>
         <div class="date">{{ article.frontMatter.date || '' }}</div>
