@@ -51,6 +51,9 @@ const pages = computed(() => siteData.value.themeConfig.pages)
     border-radius 5px
     position relative
     box-shadow 0 15px 35px rgba(0,0,0,0.1),0 3px 10px rgba(0,0,0,0.07)
+    &:hover
+        transition 0.2s ease-out
+        transform scale(1.05)
     .docs-title
         font-size 1.5rem
         margin-bottom 1rem

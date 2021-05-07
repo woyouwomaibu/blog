@@ -6,7 +6,7 @@
             :key="index"
             :class="selectTag === key ? 'picked tag' : 'tag'"
         >
-            {{ key + '(' + item.length + ')' }}
+            {{ key }}
         </span>
     </div>
     <a
@@ -64,10 +64,14 @@ export default defineComponent({
     margin 0 16px 12px 0
     font-size 14px
     line-height 25px
-    background-color #ccc
-    transition 0.4s
+    background-color rgba(27,31,35,0.05)
     color #000
     cursor pointer
+    border-radius 5px
+    &:hover
+        transition 0.2s ease-out
+        transform scale(1.1)
+        
 
 .tags
     .picked
