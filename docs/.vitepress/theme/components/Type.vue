@@ -30,13 +30,11 @@ export default defineComponent({
 .typejs-box
     white-space pre-wrap
     font-size 14px
-    background rgba(27,31,35,.05)
     color #000
     display inline-block
-    margin 1rem 0
     padding 20px
     min-height 78px
     width 100%
-    box-shadow 0 15px 35px rgba(0,0,0,0.1),0 3px 10px rgba(0,0,0,0.07)
+    text-align center
 
 </style>
