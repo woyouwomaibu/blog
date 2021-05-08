@@ -2,6 +2,7 @@
     <main class="page">
         <div class="container">
             <slot name="top" />
+            <div class="docs-title" v-if="showTitle">{{pageTitle}}</div>
 
             <div class="content">
                 <Content />
@@ -25,6 +26,7 @@ import { usePageData, useRoute } from 'vitepress'
 
 const page = usePageData()
 const pageTitle = computed(() => page.value.frontmatter.title)
+const showTitle = computed(() => !page.value.frontmatter.page)
 const showComment = computed(() => { return !page.value.frontmatter.page })
 
 </script>
@@ -32,6 +34,15 @@ const showComment = computed(() => { return !page.value.frontmatter.page })
 <style lang='stylus' scoped>
 .page
     padding-top var(--header-height)
+
+.docs-title
+    font-size 2.2rem
+    font-weight 600
+    padding-top 1.5rem
+
+@media (max-width 420px)
+    .docs-title
+        font-size 1.9rem
 
 @media (min-width 720px)
     .page
