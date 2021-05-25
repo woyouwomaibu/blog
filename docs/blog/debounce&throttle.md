@@ -1,6 +1,6 @@
 ---
 title: 防抖与节流
-date: 2021-05-31
+date: 2021-05-11
 tags:
  - Javascript
 description: js中的防抖与节流
@@ -21,7 +21,7 @@ function debounce (fn, time, immediate) {
     }
 } 
 
-funtion throttle (fn, time, callnow ) { 
+funtion throttle (fn, time, immediate ) { 
     let timer = null 
     let callnow = immediate 
     return function () { 
