@@ -5,6 +5,11 @@ tags:
  - Javascript
 description: 深拷贝的简单实现以及进阶
 ---
+## JS的数据类型
+
+* 基本类型（undefined、null、string、number、boolean、symbol（ES6））
+* 引用类型（Object、Array、RegExp、Date、Function）
+
 ## 深浅拷贝定义
 ### 浅拷贝
 创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址 ，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。
@@ -48,3 +53,6 @@ function deepClone(target, map = new WeakMap()) {
     }
 }
 ```
+## 进阶文章
+* <https://www.jianshu.com/p/785192745c10>
+* <https://cloud.tencent.com/developer/article/1497418>
