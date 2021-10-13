@@ -2,7 +2,7 @@ set -e
 
 yarn build
 
-cd docs/.vitepress/dist
+cd docs/.vuepress/dist
 echo fxxkit.com > CNAME
 
 git init
