@@ -3,7 +3,7 @@
   "browserHash": "c13294ab",
   "optimized": {
     "@vuepress/shared": {
-      "file": "C:/Users/realtech/Desktop/vuepress-starter/docs/.vuepress/.cache/@vuepress_shared.js",
+      "file": "C:/Users/realtech\/Desktop/vuepress-starter/docs/.vuepress/.cache/@vuepress_shared.js",
       "src": "C:/Users/realtech/Desktop/vuepress-starter/node_modules/@vuepress/shared/lib/esm/index.js",
       "needsInterop": false
     },
