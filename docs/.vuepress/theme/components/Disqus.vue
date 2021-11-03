@@ -75,3 +75,9 @@ setTimeout(function () {
     }
 }, 0)
 </script>
+<style lang="stylus" scoped>
+#disqus_thread
+    max-width var(--content-width)
+    margin 0 auto
+    padding 2rem 2.5rem
+</style>
