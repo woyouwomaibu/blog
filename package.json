@@ -1,16 +1,11 @@
 {
-  "name": "vuepress-starter",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
-    "@vuepress/plugin-search": "^2.0.0-beta.26",
-    "stylus": "^0.55.0",
-    "vuepress-vite": "^2.0.0-beta.26"
+    "vitepress": "^1.6.3"
   },
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "deploy": "start deploy.sh"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs"
   }
 }
