@@ -2,7 +2,12 @@
   <div class="md-list">
     <ul>
       <li v-for="post of posts">
-        <a :href="post.url">{{ post.frontmatter.title }}</a>
+        <a :href="post.url">
+          <div class="post-title">{{ post.frontmatter.title }}</div>
+          <div class="post-meta">
+            <time>{{ formatDate(post.frontmatter.date) }}</time>
+          </div>
+        </a>
       </li>
     </ul>
   </div>
@@ -11,8 +16,18 @@
 <script setup>
 // 组件逻辑
 import { data as posts } from './posts.data.js'
-console.log(posts)
 
+// 日期格式化函数
+function formatDate(dateString) {
+  if (!dateString) return ''
+  
+  const date = new Date(dateString)
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  
+  return `${year}-${month}-${day}`
+}
 </script>
 
 <style scoped>
@@ -29,29 +44,43 @@ console.log(posts)
 }
 
 .md-list li {
-  margin: 12px 0;
-  padding: 16px 24px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s ease;
+  margin: 24px 0;
+  padding: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 
-.md-list li:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+.md-list li:last-child {
+  border-bottom: none;
 }
 
 .md-list a {
-  color: #2c3e50;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
   display: block;
-  line-height: 1.5;
+  padding: 16px 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .md-list a:hover {
-  color: #3eaf7c;
+  opacity: 0.8;
+}
+
+.post-title {
+  color: var(--vp-c-text-1);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.post-author {
+  color: var(--vp-c-brand);
 }
 </style>
