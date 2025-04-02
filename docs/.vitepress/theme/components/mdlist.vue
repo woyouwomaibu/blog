@@ -1,7 +1,7 @@
 <template>
   <div class="md-list">
     <ul>
-      <li v-for="post of posts">
+      <li v-for="post of sortedPosts">
         <a :href="post.url">
           <div class="post-title">{{ post.frontmatter.title }}</div>
           <div class="post-meta">
@@ -14,8 +14,15 @@
 </template>
 
 <script setup>
-// 组件逻辑
 import { data as posts } from './posts.data.js'
+import { computed } from 'vue'
+
+// 对文章按日期进行降序排序
+const sortedPosts = computed(() => {
+  return [...posts].sort((a, b) => {
+    return new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  })
+})
 
 // 日期格式化函数
 function formatDate(dateString) {
