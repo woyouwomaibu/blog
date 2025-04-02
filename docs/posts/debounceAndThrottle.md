@@ -5,7 +5,9 @@ tags:
  - Javascript
 description: js中的防抖与节流
 ---
-```js
+
+
+``` js
 function debounce (fn, time, immediate) { 
     let timer = null 
     return function () { 

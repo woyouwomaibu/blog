@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Fuck the world",
@@ -8,9 +8,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-    ],
-    search: {
-      provider: 'local'
-    }
+    ]
+  },
+  vite: {
+    plugins: [pagefindPlugin()],
   }
 })
