@@ -3,26 +3,17 @@
 layout: home
 
 hero:
-  name: "FXXKIT"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: ""
+  text: ""
+  tagline: "" 
   actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-    - theme: alt
-      text: gitCommand
-      link: /gitCommand
+    # - theme: brand
+    #   text: Markdown Examples
+    #   link: /markdown-examples
+
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  # - title: Feature A
+  #   details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
+<Mdlist />

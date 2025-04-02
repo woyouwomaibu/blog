@@ -7,6 +7,6 @@
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
-    "deploy": "sh deploy.sh"
+    "deploy": "bun run deploy.sh"
   }
 }
